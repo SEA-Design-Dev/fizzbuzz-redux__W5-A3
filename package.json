@@ -1,0 +1,27 @@
+{
+  "name": "fizzbuzz-redux__w5-a3",
+  "version": "0.1.0",
+  "description": "## Scenario and Requirements",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mollyfish/fizzbuzz-redux__W5-A3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mollyfish/fizzbuzz-redux__W5-A3/issues"
+  },
+  "homepage": "https://github.com/mollyfish/fizzbuzz-redux__W5-A3#readme"
+}
