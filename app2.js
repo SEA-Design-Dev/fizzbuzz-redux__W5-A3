@@ -1,22 +1,27 @@
 var aVal, zVal
 
 var FizzBuzz = (function () {
-  var brains = function(aVal, zVal){
+  var brains = function(aVal, zVal, newString1, newString2){
   var myArray =[];
+  var formString1 = document.getElementById("new-string1").value;
+  var formString2 = document.getElementById("new-string2").value;
+  this.newString1 = newString1 || "FUCK SHIT";
+  this.newString2 = newString2 || "yay";
+
     for ( aVal ; aVal <= zVal; aVal ++) {
       if (aVal % 5 === 0 && aVal % 3 === 0) {
         myArray.push("FizzBuzz")
       } else if ( aVal % 5 === 0) {
-        if (document.getElementById("new-string1").value == "") {
-          myArray.push("Buzz");
+        if ( formString1 == "") {
+          myArray.push(this.newString1);
         } else {
-          myArray.push(document.getElementById("new-string1").value);
+          myArray.push(formString1);
         }
       } else if (aVal % 3 === 0) {
-       if (document.getElementById("new-string1").value == "") {
-          myArray.push("Fizz");
+       if (formString2 == "") {
+          myArray.push(this.newString2);
         } else {
-          myArray.push(document.getElementById("new-string2").value);
+          myArray.push(formString2);
         }
       } else {
         myArray.push(aVal);
