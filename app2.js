@@ -1,6 +1,11 @@
 var FizzBuzz = (function () {
   var aVal, zVal
 
+  var _fizzbuzz = function(newString1, newString2) {
+    this.newString1 = newString1 || "Fuzz";
+    this.newString2 = newString2 || "Bizz";
+  };
+
   var calculate = function(aVal, zVal, newString1, newString2){
   var myArray =[];
     for ( aVal ; aVal <= zVal; aVal ++) {
@@ -17,10 +22,6 @@ var FizzBuzz = (function () {
     return myArray;
   };
 
-  var _fizzbuzz = function(newString1, newString2) {
-    this.newString1 = newString1 || "Fuzz";
-    this.newString2 = newString2 || "Bizz";
-  };
 
   _fizzbuzz.prototype = {
     read: function (aVal, zVal) {
