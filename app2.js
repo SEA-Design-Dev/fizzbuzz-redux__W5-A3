@@ -1,38 +1,30 @@
-var aVal, zVal
-
 var FizzBuzz = (function () {
-  var brains = function(aVal, zVal, newString1, newString2){
-  var myArray =[];
-  var formString1 = document.getElementById("new-string1").value;
-  var formString2 = document.getElementById("new-string2").value;
-  this.newString1 = newString1 || "FUCK SHIT";
-  this.newString2 = newString2 || "yay";
+  var aVal, zVal
 
+  var calculate = function(aVal, zVal, newString1, newString2){
+  var myArray =[];
     for ( aVal ; aVal <= zVal; aVal ++) {
       if (aVal % 5 === 0 && aVal % 3 === 0) {
-        myArray.push("FizzBuzz")
-      } else if ( aVal % 5 === 0) {
-        if ( formString1 == "") {
-          myArray.push(this.newString1);
-        } else {
-          myArray.push(formString1);
-        }
-      } else if (aVal % 3 === 0) {
-       if (formString2 == "") {
-          myArray.push(this.newString2);
-        } else {
-          myArray.push(formString2);
-        }
+        myArray.push(newString1+newString2)
+      } else if ( aVal % 3 === 0) {
+        myArray.push(newString1);
+      } else if (aVal % 5 === 0) {
+        myArray.push(newString2);
       } else {
         myArray.push(aVal);
       }
     }
     return myArray;
   };
-  var _fizzbuzz = function() {};
+
+  var _fizzbuzz = function(newString1, newString2) {
+  this.newString1 = newString1 || "Fuzz";
+  this.newString2 = newString2 || "Bizz";
+  };
+
   _fizzbuzz.prototype = {
     read: function (aVal, zVal) {
-      this.result = brains(aVal, zVal);
+      this.result = calculate(aVal, zVal, this.newString1, this.newString2);
       },
     write: function(){
       document.getElementById("output").innerHTML="";
@@ -42,5 +34,7 @@ var FizzBuzz = (function () {
       document.getElementById("output").appendChild(newEl);
     }
   }
+
   return _fizzbuzz;
+
 }());
