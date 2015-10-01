@@ -12,7 +12,7 @@ var FizzBuzz = (function () { // Gotta have that IFFE
       this.min = startVal;
       this.max = endVal;
       this.fizzArray = [];
-      for (var i = parseInt(startVal); i <= parseInt(endVal); i++) { // Loop through the values
+      for (var i = startVal; i <= endVal; i++) { // Loop through the values
         // Check conditions; Push to fizzArray
         this.fizzArray.push(i % 15 === 0 ? this.wordOne + this.wordTwo : i % 3 === 0 ? this.wordOne : i % 5 === 0 ? this.wordTwo : i);
       }

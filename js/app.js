@@ -17,7 +17,7 @@
       }
     }
 
-    if (startVal === "" || endVal === "") { // Throw up an alert if there isn't one or both values
+    if (isNaN(startVal) || isNaN(endVal)) { // Throw up an alert if there isn't one or both values
       alert("Please enter a number");
     } else if (startVal >= endVal) {
       alert("First value must be less than the second");
