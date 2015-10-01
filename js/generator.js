@@ -24,5 +24,3 @@ function _generateOutput(inputs, strings) {
 
   return outputArray;
 }
-
-// console.log(_generateOutput([1, 15], "Fizz", "Buzz"));
