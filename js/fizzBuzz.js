@@ -52,7 +52,6 @@ var FizzBuzz = (function() {
       }
 
       writeFB = document.createElement("p");
-      writeFB.innerHTML = "";
       writeFB.innerHTML = output;
       writeNums.appendChild(writeFB);
     },
