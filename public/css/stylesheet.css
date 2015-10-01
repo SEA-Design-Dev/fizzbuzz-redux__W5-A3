@@ -1,0 +1,88 @@
+.l-FB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1024px;
+  margin: auto; }
+  @media (min-width: 1024px) {
+    .l-FB {
+      flex-direction: row; } }
+
+.l-FB-game-area {
+  position: relative;
+  min-width: 45%;
+  max-width: 45%;
+  margin: 0.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+
+.l-input-area {
+  margin: 0.5%; }
+
+.l-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  width: 90%; }
+
+.l-output {
+  min-width: 98%;
+  margin-top: 0; }
+
+body {
+  background-color: #315BB2;
+  font-family: Helvetica, sans-serif;
+  color: #FFCE5F;
+  box-sizing: border-box; }
+  body input::-webkit-input-placeholder {
+    color: #FFCE5F; }
+  body input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #FFCE5F; }
+  body input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #FFCE5F; }
+  body input:-ms-input-placeholder {
+    color: #FFCE5F; }
+
+.FB-game-area, .results {
+  border: 3px solid #5F93FF;
+  background-color: #79A5FF;
+  border-radius: 1%; }
+
+input {
+  border: 3px solid #B2851F;
+  color: #FFCE5F;
+  background-color: #B2851F;
+  border-radius: 20%/50%;
+  text-align: center;
+  height: 2em; }
+  input:hover {
+    border: 3px solid #FFCE5F; }
+  input:focus {
+    color: #FFCE5F;
+    border: 3px solid #FFCE5F; }
+
+option {
+  background-color: #315BB2;
+  color: #FFCE5F; }
+
+button {
+  background-color: #315BB2;
+  border: 3px solid #315BB2;
+  color: #79A5FF;
+  border-radius: 20%/50%; }
+  button:hover, button:focus {
+    background-color: #79A5FF;
+    color: #315BB2; }
+  button:active {
+    border: 2px solid #FFCE5F; }
+
+.output {
+  background-color: #315BB2;
+  border: #5F93FF;
+  border-top: 3px solid #B2851F;
+  padding: 0.5%; }
