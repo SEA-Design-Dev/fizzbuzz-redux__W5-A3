@@ -7,7 +7,14 @@ form.addEventListener('submit', function(e) {
   var low = Number(form.elements.lowNumber.value);
   var high = Number(form.elements.highNumber.value);
 
-  var text = new FizzBuzz(low, high);
+  var wordOne = form.elements.fizzOption.value;
+  var wordTwo = form.elements.buzzOption.value;
+
+  console.log(wordOne);
+  console.log(wordTwo);
+
+  var text = new FizzBuzz(low, high, wordOne, wordTwo);
+  console.log(text);
   text.writeArray(text.readArray());
 
 });

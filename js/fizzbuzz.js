@@ -2,13 +2,24 @@
 
 var FizzBuzz = (function() {
 
-  var fizzBuzz = function (a, b) {
+  var fizzBuzz = function (a, b, c, d) {
     this.lowNumber = a;
     this.highNumber = b;
+    this.firstWord = c;
+    this.secondWord = d;
   }
 
   fizzBuzz.prototype.readArray = function() {
     var array = [];
+
+    if (!this.firstWord) {
+      this.firstWord = 'Fizz';
+    }
+
+    if (!this.secondWord) {
+      this.secondWord = 'Buzz';
+    }
+
 
     for (var i = 0; i < (this.highNumber - this.lowNumber + 1); i++) {
 
@@ -17,13 +28,13 @@ var FizzBuzz = (function() {
           array[i] = 0;
         }
         else if (array[i] % 3 === 0 && array[i] % 5 === 0){
-            array[i] = "fizzbuzz"
+            array[i] = this.firstWord + this.secondWord
         }
         else if (array[i] % 5 === 0){
-            array[i] = "buzz"
+            array[i] = this.secondWord
         }
         else if (array[i] % 3 === 0){
-            array[i] = "fizz"
+            array[i] = (this.firstWord)
         }
 
       }
@@ -53,7 +64,3 @@ var FizzBuzz = (function() {
   return fizzBuzz;
 
 }());
-
-
-
-
