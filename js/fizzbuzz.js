@@ -1,26 +1,23 @@
 // scope FizzyBuzzy for privacy
 var FizzyBuzzy = (function() {  
-
+  // defining _FizzBuzz as a function
   var _FizzBuzz = function(word1,word2) {
     this.word1 = word1 || 'Fizz';
     this.word2 = word2 || 'Buzz';
   }; 
-  // defining _FizzBuzz as a function, but can be empty b/c 
-  // all the functionality is in the other functions below
   
   // start and stop come from the READ function where doFizzBuzz is called
-  function doFizzBuzz(start,stop) {  
-    console.log(this.word1);
+  function doFizzBuzz(start,stop,firstWord,secondWord) {  
     // array to store the results
     var resultArr = [];
     // for loop to generate results
     for (var i = start; i < stop + 1; i++) {
       if (i % 3 === 0 && i % 5 !== 0) {
-        resultArr.push(this.word1); 
+        resultArr.push(firstWord); 
       } else if (i % 5 === 0 && i % 3 !== 0) {
-        resultArr.push(this.word2); 
+        resultArr.push(secondWord); 
       } else if (i % 3 === 0 && i % 5 === 0) {
-        resultArr.push(this.word1 + this.word2); 
+        resultArr.push(firstWord + secondWord); 
       } else {
         resultArr.push(i); 
       }
@@ -34,12 +31,18 @@ var FizzyBuzzy = (function() {
     // given the values entered in the form as start and stop
     this.start = start;
     this.stop = stop + 1;
-    this.result = doFizzBuzz(start,stop);
+    // pass optional word values to firstWord and secondWord
+    this.firstWord = this.word1;
+    this.secondWord = this.word2;
+    // pass values into doFizzBuzz
+    this.result = doFizzBuzz(start,stop,this.firstWord,this.secondWord);
+    console.log(this.firstWord);
     // error checking
     if (start >= stop) {
       alert('Your stop value must be larger than your start value.');
     }
   };
+  
   // call WRITE in the event listener, give destination DOM object in the call
   _FizzBuzz.prototype.write = function(destination) {
     this.destination = destination;
