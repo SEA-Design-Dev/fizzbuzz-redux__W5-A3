@@ -5,11 +5,19 @@ var FizzBuzz = (function () {
   var myArray =[];
     for ( aVal ; aVal <= zVal; aVal ++) {
       if (aVal % 5 === 0 && aVal % 3 === 0) {
-        console.log(document.getElementById("new-string1").value);
+        myArray.push("FizzBuzz")
       } else if ( aVal % 5 === 0) {
-        myArray.push("Buzz");
+        if (document.getElementById("new-string1").value == "") {
+          myArray.push("Buzz");
+        } else {
+          myArray.push(document.getElementById("new-string1").value);
+        }
       } else if (aVal % 3 === 0) {
-        myArray.push("Fizz");
+       if (document.getElementById("new-string1").value == "") {
+          myArray.push("Fizz");
+        } else {
+          myArray.push(document.getElementById("new-string2").value);
+        }
       } else {
         myArray.push(aVal);
       }
