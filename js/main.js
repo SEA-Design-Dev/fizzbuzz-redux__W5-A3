@@ -13,8 +13,11 @@ form.addEventListener('submit', function(e) {
   var wordOne = form.elements.fizzOption.value;
   var wordTwo = form.elements.buzzOption.value;
 
-  var fizzBuzzer = new FizzBuzz(low, high, wordOne, wordTwo);
+  var fizzBuzzer = new FizzBuzz(wordOne, wordTwo);
 
-  el.appendChild(fizzBuzzer.writeArray(fizzBuzzer.readArray()));
+  console.log(fizzBuzzer);
+
+  fizzBuzzer.readArray(low, high);
+  fizzBuzzer.writeArray(el);
 
 });

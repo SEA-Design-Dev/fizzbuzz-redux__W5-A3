@@ -2,27 +2,32 @@
 
 var FizzBuzz = (function() {
 
-  var fizzBuzz = function (a, b, c, d) {
-    this.lowNumber = a;
-    this.highNumber = b;
-    this.firstWord = c;
-    this.secondWord = d;
-  }
+  var array = [];
+  var fizzBuzz = function (firstWord, secondWord) {
 
-  fizzBuzz.prototype.readArray = function() {
-    var array = [];
-
-    if (!this.firstWord) {
+    if (firstWord !== '') {
+      this.firstWord = firstWord;
+    }
+    else {
       this.firstWord = 'Fizz';
     }
 
-    if (!this.secondWord) {
+    if (secondWord !== '') {
+      this.secondWord = secondWord;
+    }
+    else {
       this.secondWord = 'Buzz';
     }
 
-    for (var i = 0; i < (this.highNumber - this.lowNumber + 1); i++) {
+    console.log(this.firstWord);
 
-      array[i] = this.lowNumber + i;
+  }
+
+  fizzBuzz.prototype.readArray = function(lowNumber, highNumber) {
+
+    for (var i = 0; i < (highNumber - lowNumber + 1); i++) {
+
+      array[i] = lowNumber + i;
         if (array[i] === 0) {
           array[i] = 0;
         }
@@ -37,11 +42,11 @@ var FizzBuzz = (function() {
         }
 
       }
-      return array;
+    console.log(array);
+    return array;
   };
 
-  fizzBuzz.prototype.writeArray = function (array) {
-    this.array = array;
+  fizzBuzz.prototype.writeArray = function (el) {
 
     var fizzBuzzData = document.createElement('ul');
 
@@ -52,7 +57,9 @@ var FizzBuzz = (function() {
       fizzBuzzData.appendChild(temp);
     }
 
-    return fizzBuzzData;
+      el.appendChild(fizzBuzzData);
+
+    return el;
   };
 
   return fizzBuzz;
