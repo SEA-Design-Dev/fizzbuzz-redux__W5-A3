@@ -6,8 +6,6 @@ var FizzBuzz = (function() { // IIFE
     this.result = [];
     this.newFizz = newFizz || "Fizz";
     this.newBuzz = newBuzz || "Buzz";
-    // assign stuff here that's fairly constant
-    // unique to instance, may or may not change
   };
 
   Fizzbuzz.prototype.read = function(startNum, endNum) {
@@ -25,7 +23,7 @@ var FizzBuzz = (function() { // IIFE
         this.result.push(i);
       }
     }
-    console.log(this.result);
+    console.log(this.result); // For debugging
   };
 
   Fizzbuzz.prototype.write = function () {
@@ -38,33 +36,16 @@ var FizzBuzz = (function() { // IIFE
 
     // createElement
     for (var i = 0; i < this.result.length; i++) {
-      var span = document.createElement("span");
+      var p = document.createElement("p");
       var text = this.result[i];
       var att = document.createAttribute("class"); // Add class attribute
-      span.appendChild(document.createTextNode(text));
-      att.value = text;
-      span.setAttributeNode(att);
-      document.getElementById("output").appendChild(span);
+      p.appendChild(document.createTextNode(text));
+      att.value = text; // Specify what class name to attach
+      p.setAttributeNode(att);
+      document.getElementById("output").appendChild(p);
     }
   };
-
   return Fizzbuzz;
-
 }());
-
-  // A prototype function that can accept new words to replace 'fizz' 'buzz'
-  // Use 'boop' and 'beep' to test!
-
-  // NOT WORKING YET
-  // Fizzbuzz.prototype.changeString = function() {
-  //   var newFizz = document.getElementById("newFizz").value;
-  //   var newBuzz = document.getElementById("newBuzz").value;
-  //   // change to newFizz
-  //   document.getElementsByClassName("Fizz").innerHTML = newFizz;
-  //   // change to newBuzz
-  //   document.getElementsByClassName("Buzz").innerHTML = newBuzz;
-  //   // change to newFizz + newBuzz
-  //   document.getElementsByClassName("FizzBuzz").innerHTML = newFizz + newBuzz;
-  // };
 
 

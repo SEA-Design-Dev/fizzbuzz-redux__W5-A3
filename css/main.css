@@ -1,14 +1,35 @@
 body {
   font-family: Helvetica;
   text-align: center;
+  color: #ff6347;
 }
-span {
-  padding: 0.2em;
+form {
+  margin: 0 auto;
+  display: block;
 }
-.result {
-  width: 20em;
+input {
+  text-align: center;
+  padding: 1em;
+}
+input[type="submit"] {
+  border: none;
+  padding: 1em;
+  background-color: #ff6347;
+}
+p {
+  display: inline-block;
+  padding: 0.5em;
 }
 #output {
-  width: 20em;
+  margin: 0 auto;
+  width: 80%;
 }
-
+.Fizz, .butt {
+  color: #ffa500;
+}
+.Buzz, .hole {
+  color: #ff69b4;
+}
+.FizzBuzz, .butthole {
+  color: #008000;
+}
