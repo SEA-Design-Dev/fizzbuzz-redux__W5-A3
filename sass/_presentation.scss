@@ -1,0 +1,61 @@
+$color-A: #315BB2; //dark blue
+$color-B: #5F93FF; //medium blue
+$color-C: #79A5FF; //light blue
+$color-D: #B2851F; //dark peach
+$color-E: #FFCE5F; //light peach
+
+body {
+  background-color: $color-A;
+  font-family: Helvetica, sans-serif;
+  color: $color-E;
+  box-sizing: border-box;
+  @include input-placeholder-color ($color-E);
+}
+
+.FB-game-area, .results {
+  border: 3px solid $color-B;
+  background-color: $color-C;
+  border-radius: 1%;
+}
+
+input {
+  border: 3px solid $color-D;
+  color: $color-E;
+  background-color: $color-D;
+  border-radius: 20%/50%;
+  text-align: center;
+  height: 2em;
+  &:hover{
+    border: 3px solid $color-E;
+  }
+  &:focus {
+    color: $color-E;
+    border: 3px solid $color-E;
+  }
+}
+
+option {
+  background-color: $color-A;
+  color: $color-E;
+}
+
+button {
+  background-color: $color-A;
+  border: 3px solid $color-A;
+  color: $color-C;
+  border-radius: 20%/50%;
+  &:hover, &:focus {
+    background-color: $color-C;
+    color: $color-A;
+  }
+  &:active {
+    border: 2px solid $color-E;
+  }
+}
+
+.output {
+  background-color: $color-A;
+  border: $color-B;
+  border-top: 3px solid $color-D;
+  padding: 0.5%;
+}
