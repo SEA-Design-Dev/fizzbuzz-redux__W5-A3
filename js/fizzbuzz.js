@@ -49,25 +49,15 @@ var FizzBuzz = (function() { // IIFE
 
   // A prototype function that can accept new words to replace 'fizz' 'buzz'
   // Use 'boop' and 'beep' to test!
-  Fizzbuzz.prototype.changeString = function(x, y) {
+  Fizzbuzz.prototype.changeString = function() {
     var newFizz = document.getElementById("newFizz").value;
     var newBuzz = document.getElementById("newBuzz").value;
-
-    for (var i = 0; i < this.result.length; i++) {
-      // if string is "Fizz", change to var newFizz
-      if (this.result[i] == "Fizz") {
-        // change to newFizz
-        document.getElementsByClassName("Fizz").innerHTML = newFizz;
-      }
-      else if (this.result[i] == "Buzz") {
-        // change to newBuzz
-        document.getElementsByClassName("Buzz").innerHTML = newBuzz;
-      }
-      else if (this.result[i] == "FizzBuzz") {
-        // change to newFizz + newBuzz
-        document.getElementsByClassName("FizzBuzz").innerHTML = newFizz + newBuzz;
-      }
-    }
+    // change to newFizz
+    document.getElementsByClassName("Fizz").innerHTML = newFizz;
+    // change to newBuzz
+    document.getElementsByClassName("Buzz").innerHTML = newBuzz;
+    // change to newFizz + newBuzz
+    document.getElementsByClassName("FizzBuzz").innerHTML = newFizz + newBuzz;
   };
 
   return Fizzbuzz;
