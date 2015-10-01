@@ -24,11 +24,10 @@ document.getElementById("changeString").addEventListener("click", function(e) {
   var newFizz = document.getElementById("newFizz").value;
   var newBuzz = document.getElementById("newBuzz").value;
 
-  fizzbuzz.changeString(newFizz, newBuzz);
+  fizzbuzz.changeString(newFizz, newBuzz); // only this not working
 
   console.log(newFizz);
   console.log(newBuzz);
-
   document.getElementById("newFizz").value = "";
   document.getElementById("newBuzz").value = "";
 

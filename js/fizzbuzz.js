@@ -3,6 +3,9 @@
 var FizzBuzz = (function() { // IIFE
   var Fizzbuzz = function() { // the constructor!
     this.result = [];
+    // this.newFizz = newFizz;
+    // this.newBuzz = newBuzz;
+
     // assign stuff here that's fairly constant
     // unique to instance, may or may not change
   };
@@ -33,13 +36,12 @@ var FizzBuzz = (function() { // IIFE
 
     document.getElementById("start").innerHTML = startVal;
     document.getElementById("end").innerHTML = endVal;
-    // document.getElementById("output").innerHTML = this.result;
 
     // createElement
     for (var i = 0; i < this.result.length; i++) {
       var span = document.createElement("span");
       var text = this.result[i];
-      var att = document.createAttribute("class"); // Add class
+      var att = document.createAttribute("class"); // Add class attribute
       span.appendChild(document.createTextNode(text));
       att.value = text;
       span.setAttributeNode(att);
@@ -49,6 +51,8 @@ var FizzBuzz = (function() { // IIFE
 
   // A prototype function that can accept new words to replace 'fizz' 'buzz'
   // Use 'boop' and 'beep' to test!
+
+  // NOT WORKING YET
   Fizzbuzz.prototype.changeString = function() {
     var newFizz = document.getElementById("newFizz").value;
     var newBuzz = document.getElementById("newBuzz").value;
