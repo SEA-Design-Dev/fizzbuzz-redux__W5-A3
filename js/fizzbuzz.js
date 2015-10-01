@@ -1,6 +1,7 @@
 'use strict';
 
 var FizzBuzz = (function() { // IIFE
+
   var Fizzbuzz = function(newFizz, newBuzz) { // the constructor!
     this.result = [];
     this.newFizz = newFizz || "Fizz";
@@ -10,7 +11,6 @@ var FizzBuzz = (function() { // IIFE
   };
 
   Fizzbuzz.prototype.read = function(startNum, endNum) {
-
     for (var i = startNum; i <= endNum; i++) {
       if (i % 3 === 0 && i % 5 === 0) {
         this.result.push(this.newFizz + this.newBuzz);
@@ -26,7 +26,6 @@ var FizzBuzz = (function() { // IIFE
       }
     }
     console.log(this.result);
-
   };
 
   Fizzbuzz.prototype.write = function () {
