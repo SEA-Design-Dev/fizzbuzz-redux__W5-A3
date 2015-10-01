@@ -1,0 +1,14 @@
+body {
+  font-family: Helvetica;
+  text-align: center;
+}
+span {
+  padding: 0.2em;
+}
+.result {
+  width: 20em;
+}
+#output {
+  width: 20em;
+}
+
