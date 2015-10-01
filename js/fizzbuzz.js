@@ -1,22 +1,26 @@
 // scope FizzyBuzzy for privacy
 var FizzyBuzzy = (function() {  
 
-  var _FizzBuzz = function() {}; 
+  var _FizzBuzz = function(word1,word2) {
+    this.word1 = word1 || 'Fizz';
+    this.word2 = word2 || 'Buzz';
+  }; 
   // defining _FizzBuzz as a function, but can be empty b/c 
   // all the functionality is in the other functions below
   
   // start and stop come from the READ function where doFizzBuzz is called
   function doFizzBuzz(start,stop) {  
+    console.log(this.word1);
     // array to store the results
     var resultArr = [];
     // for loop to generate results
     for (var i = start; i < stop + 1; i++) {
       if (i % 3 === 0 && i % 5 !== 0) {
-        resultArr.push('Fizz'); 
+        resultArr.push(this.word1); 
       } else if (i % 5 === 0 && i % 3 !== 0) {
-        resultArr.push('Buzz'); 
+        resultArr.push(this.word2); 
       } else if (i % 3 === 0 && i % 5 === 0) {
-        resultArr.push('FizzBuzz'); 
+        resultArr.push(this.word1 + this.word2); 
       } else {
         resultArr.push(i); 
       }
@@ -48,7 +52,7 @@ var FizzyBuzzy = (function() {
     if (this.start < this.stop) {
       // append heading and empty <ul>
       var heading = document.createElement('h2');
-      heading.appendChild(document.createTextNode('Your FizzBuzz from ' + this.start + ' to ' + (this.stop - 1) + ':'));
+      heading.appendChild(document.createTextNode('Your ' + this.word1 + this.word2 + ' from ' + this.start + ' to ' + (this.stop - 1) + ':'));
       this.destination.appendChild(heading);
       var newList = document.createElement('ul');
       this.destination.appendChild(newList);

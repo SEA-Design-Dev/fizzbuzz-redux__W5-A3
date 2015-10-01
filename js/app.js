@@ -1,7 +1,7 @@
 'use strict';
 (function() {
   // create an instance on page load
-  var fizzbuzz = new FizzyBuzzy();
+  var fizzbuzz = new FizzyBuzzy('Bloop','Beep');
   
   // create variable for submission element
   var elSubmit = document.getElementById('goForFizzBuzz');
