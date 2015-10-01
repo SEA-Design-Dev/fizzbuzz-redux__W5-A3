@@ -1,5 +1,4 @@
 'use strict'
-
 var FizzBuzz = (function() {
   var _fizzBuzz = function(fizz, buzz) {
     this.name = fizz + buzz;
@@ -56,7 +55,6 @@ var FizzBuzz = (function() {
       writeFB.innerHTML = "";
       writeFB.innerHTML = output;
       writeNums.appendChild(writeFB);
-      // return output;
     },
   };
   return _fizzBuzz;
