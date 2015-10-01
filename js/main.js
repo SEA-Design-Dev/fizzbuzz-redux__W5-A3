@@ -1,25 +1,37 @@
 "use strict"
 
 var FizzBuzz = (function() {
-  var _output = [];
+  var _outputStringsArray = [];
+  var _outputArray = [];
 
-  var FizzyBuzzy = function() {};
+  var FizzyBuzzy = function(string1, string2) {
+    _outputStringsArray.push(string1, string2);
+  }
+
+  FizzyBuzzy.prototype.getStrings = function() {
+    return _outputStringsArray;
+  }
 
   FizzyBuzzy.prototype.read = function() {
-    var userInput = [];
     var startValue = document.getElementById("start-value");
     var endValue = document.getElementById("end-value");
+    var userInput = [];
 
     userInput.push(parseInt(startValue.value), parseInt(endValue.value));
+
     return userInput;
+  }
+
+  FizzyBuzzy.prototype.getOutput = function(inputs, strings) {
+    return _generateOutput(inputs, strings);
   }
 
   return FizzyBuzzy;
 
 })();
 
-// var fizzBuzz = new FizzBuzz("Fizz", "Buzz");
-
+var fizzBuzz = new FizzBuzz("Fizz", "Buzz");
+// console.log(fizzBuzz.getString1());
 // FizzBuzz.prototype.generate = function(input) {
 //   var userInput = input;
 //   var data = [];
@@ -91,10 +103,17 @@ var FizzBuzz = (function() {
 //     }.bind(this), false);
 //   }
 
+// var form = document.getElementById("user-input");
+
+document.getElementById("user-input").addEventListener("submit", _handler, false);
+
 function _handler(e) {
   e.preventDefault();
 
-
+  console.log(fizzBuzz.getOutput(fizzBuzz.read(), fizzBuzz.getStrings()));
+  // console.log(fizzBuzz.getString1());
 }
+
+// console.log(form);
 
 // fizzBuzz.addEventListener();

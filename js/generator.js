@@ -1,8 +1,10 @@
 "use strict"
 
-function _generateOutput(input, string1, string2) {
-  var startInput = input[0];
-  var endInput = input[1];
+function _generateOutput(inputs, strings) {
+  var startInput = inputs[0];
+  var endInput = inputs[1];
+  var string1 = strings[0];
+  var string2 = strings[1];
   var outputArray = [];
 
   for(var i = startInput; i <= endInput; i++) {
