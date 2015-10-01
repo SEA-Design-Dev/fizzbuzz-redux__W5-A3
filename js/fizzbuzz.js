@@ -27,11 +27,7 @@ var FizzBuzz = (function () { // Gotta have that IFFE
       var fizzieList = elementID;
       var createList = document.createElement('ul'); // Create UL
       var createHead = document.createElement('h2'); // Create H2
-      var headText = "Value " + this.min + " to " + this.max; // H2 Text
-
-      while (fizzieList.hasChildNodes()) { // Remove all child nodes from elementID
-        fizzieList.removeChild(fizzieList.firstChild);
-      }
+      var headText = "Values " + this.min + " to " + this.max; // H2 Text
 
       createHead.appendChild(document.createTextNode(headText)); // Create & append the h2
       fizzieList.appendChild(createHead);
