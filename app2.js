@@ -18,8 +18,8 @@ var FizzBuzz = (function () {
   };
 
   var _fizzbuzz = function(newString1, newString2) {
-  this.newString1 = newString1 || "Fuzz";
-  this.newString2 = newString2 || "Bizz";
+    this.newString1 = newString1 || "Fuzz";
+    this.newString2 = newString2 || "Bizz";
   };
 
   _fizzbuzz.prototype = {
