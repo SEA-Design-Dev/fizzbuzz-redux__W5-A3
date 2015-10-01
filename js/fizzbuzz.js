@@ -1,11 +1,8 @@
 var FizzBuzz = (function () { // Gotta have that IFFE
 
   var _fizzBuzz = function (x, y) { // Initialize the class/factory/what-have-you
-    this.wordOne = x;
-    this.wordTwo = y;
-    var min;
-    var max;
-    var fizzArray;
+    this.wordOne = x || "Fizz";
+    this.wordTwo = y || "Buzz";
   };
 
   _fizzBuzz.prototype = { // define fizzBuzz methods
@@ -24,20 +21,19 @@ var FizzBuzz = (function () { // Gotta have that IFFE
 
     // WRITING METHOD
     writeValues: function (elementID) {
-      var fizzieList = elementID;
       var createList = document.createElement('ul'); // Create UL
       var createHead = document.createElement('h2'); // Create H2
       var headText = "Values " + this.min + " to " + this.max; // H2 Text
 
       createHead.appendChild(document.createTextNode(headText)); // Create & append the h2
-      fizzieList.appendChild(createHead);
+      elementID.appendChild(createHead);
 
       for (var i = 0; i < this.fizzArray.length; i++) { // Loop through the array
         var listItem = document.createElement('li'); // Create a li
         listItem.appendChild(document.createTextNode(this.fizzArray[i])); // Attach a text node (the array value)
         createList.appendChild(listItem); // Append li + text to the ul
       }
-      fizzieList.appendChild(createList); // Append the ul
+      elementID.appendChild(createList); // Append the ul
     }
   }; // END METHODS
 
