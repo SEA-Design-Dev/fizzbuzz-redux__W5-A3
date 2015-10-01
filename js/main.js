@@ -4,17 +4,17 @@ form.addEventListener('submit', function(e) {
 
   e.preventDefault();
 
+  var el = document.getElementById('FizzBuzz');
+  el.removeChild(el.firstChild);
+
   var low = Number(form.elements.lowNumber.value);
   var high = Number(form.elements.highNumber.value);
 
   var wordOne = form.elements.fizzOption.value;
   var wordTwo = form.elements.buzzOption.value;
 
-  console.log(wordOne);
-  console.log(wordTwo);
+  var fizzBuzzer = new FizzBuzz(low, high, wordOne, wordTwo);
 
-  var text = new FizzBuzz(low, high, wordOne, wordTwo);
-  console.log(text);
-  text.writeArray(text.readArray());
+  el.appendChild(fizzBuzzer.writeArray(fizzBuzzer.readArray()));
 
 });
