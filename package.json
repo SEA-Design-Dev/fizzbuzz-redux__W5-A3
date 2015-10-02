@@ -5,7 +5,8 @@
   "main": "Gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.0.4"
+    "gulp-sass": "^2.0.4",
+    "sea-d44-fizz-buzz-mk": "^0.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
