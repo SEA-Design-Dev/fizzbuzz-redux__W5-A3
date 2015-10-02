@@ -48,19 +48,28 @@ var FizzBuzz = (function() {
   }
 
   FizzyBuzzy.prototype.write = function(node) {
-    var table = node;
+    var anchor = node;
+    var table;
+    var newTable = document.createElement("table");
+    var newMessage = document.createElement("h2");
     var newTableHead = document.createElement("thead");
     var newTableBody = document.createElement("tbody");
     var newTableHeaders = document.createElement("th");
     var newTableRow = document.createElement("tr");
 
-    if (table.firstChild.nextSibling) {
-      _clearTable(table);
-    }
+    // if (table) {
+    //   _clearTable(table);
+    // }
 
-    table.appendChild(newTableHead).className = "clear";
-    table.lastChild.appendChild(newTableRow).appendChild(newTableHeaders).textContent = "#1";
-    table.appendChild(newTableBody).className = "clear";
+    // table.appendChild(newTableHead).className = "clear";
+    // table.lastChild.appendChild(newTableRow).appendChild(newTableHeaders).textContent = "#1";
+    // table.appendChild(newTableBody).className = "clear";
+
+    anchor.appendChild(newTable).setAttribute("id", "results");
+    table = document.getElementById("results");
+    table.appendChild(newMessage).textContent = "Your Results";
+    table.appendChild(newTableHead).appendChild(newTableRow).appendChild(newTableHeaders).textContent = "#1";
+    table.appendChild(newTableBody);
 
     for(var i = 0; i < _outputArray.length; i++) {
       var newTableRow = document.createElement("tr");
