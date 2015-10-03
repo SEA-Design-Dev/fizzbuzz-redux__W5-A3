@@ -46,11 +46,10 @@
 
 	(function() {
 
-	  var FizzBuzz = __webpack_require__(1);
+	  var FizzBuzz = __webpack_require__(1); // Require the modules
 	  var Printlist = __webpack_require__(2);
-
-	  var myFizzy = new FizzBuzz("front", "end");
-	  var button = document.getElementById("submitBuzz");
+	  var myFizzy = new FizzBuzz("front", "end"); // Instantiate FizzBuzz
+	  var button = document.getElementById("submitBuzz"); // Variable with <button> id
 
 	  button.addEventListener("click", function (e) {
 	    e.preventDefault();
@@ -59,39 +58,29 @@
 	    var max = parseInt(document.getElementById("second-value").value);
 	    var createHead = document.createElement('h2');
 	    var headText = "Values " + min + " to " + max;
-	    // var createUl = document.createElement('ul');
 	    var fizzBuzzList = document.getElementById("fizz-list");
 
-	    myFizzy.input(min, max);
+	    myFizzy.input(min, max); // Pass in the min max to the input method
 
-	    if (!document.getElementById("check-box").checked) {
+	    if (!document.getElementById("check-box").checked) { // If no checked box, then remove children
 	      while (fizzBuzzList.hasChildNodes()) {
 	        fizzBuzzList.removeChild(fizzBuzzList.firstChild);
 	      }
 	    }
 
-	    if (isNaN(min) || isNaN(max)) {
+	    if (isNaN(min) || isNaN(max)) { // Alerts to enter values correctly, please
 	      alert("Please enter a number");
 	    } else if (min >= max) {
 	      alert("First value must be less than the second");
 	    } else {
 
 	      // Write the head
-	      createHead.appendChild(document.createTextNode(headText)); // Create & append the h2
+	      createHead.appendChild(document.createTextNode(headText)); // Create & append the H2
 	      fizzBuzzList.appendChild(createHead);
 
-	      var fizzArray = myFizzy.output();
+	      // var fizzArray = myFizzy.output();
 
-	      Printlist(fizzBuzzList, fizzArray);
-
-	      // for (var i = 0; i < fizzArray.length; i++) {
-	      //   var listItem = document.createElement('li');
-	      //   listItem.appendChild(document.createTextNode(fizzArray[i]));
-	      //   createUl.appendChild(listItem);
-	      // }
-
-	      // // I want to just say here is my div, make a ul in there with this array
-	      // fizzBuzzList.appendChild(createUl); // Append the ul
+	      Printlist(fizzBuzzList, myFizzy.output()); // Create the List
 
 	    }
 	  });
@@ -145,50 +134,21 @@
 
 	  var _printList = function(elementID, array) {
 
-	    // Pass in an ID and an array, Output a UL of the array in the ID
-	    var createUl = document.createElement('ul');
+	    var createUl = document.createElement('ul'); // Create a UL
 
 	    for (var i = 0; i < array.length; i++) {
-	      var createLi = document.createElement('li');
-	      createLi.appendChild(document.createTextNode(array[i]));
-	      createUl.appendChild(createLi);
+	      var createLi = document.createElement('li');  // Create an LI
+	      createLi.appendChild(document.createTextNode(array[i])); // Create Text Node with array value; append to LI
+	      createUl.appendChild(createLi); // Append LI to UL
 	    }
-	    elementID.appendChild(createUl);
+	    elementID.appendChild(createUl); // Append UL to elementID
 	  };
 
-	  return _printList;
+	  return _printList; // Return the function
 
 	})();
 
-	module.exports = Printlist;
-
-	// Printlist.printlist(fizzBuzzList, fizzArray);
-
-
-
-
-
-
-	    // var createUl = document.createElement('ul'); // Create UL
-	    // var createHead = document.createElement('h2'); // Create H2
-	    // var headText = "Values " + this.min + " to " + this.max; // H2 Text
-
-	    // createHead.appendChild(document.createTextNode(headText)); // Create & append the h2
-	    // elementID.appendChild(createHead);
-
-	  //   for (var i = 0; i < array.length; i++) {
-	  //       var listItem = document.createElement('li');
-	  //       listItem.appendChild(document.createTextNode(fizzArray[i]));
-	  //       createUl.appendChild(listItem);
-	  //     }
-
-	  //   for (var i = 0; i < array.length; i++) { // Loop through the array
-	  //     var listItem = document.createElement('li'); // Create a li
-	  //     listItem.appendChild(document.createTextNode(array[i])); // Attach a text node (the array value)
-	  //     createUl.appendChild(listItem); // Append li + text to the ul
-	  //   }
-	  //   elementID.appendChild(createUl); // Append the ul
-	  // };
+	module.exports = Printlist; // Export the function
 
 
 /***/ }

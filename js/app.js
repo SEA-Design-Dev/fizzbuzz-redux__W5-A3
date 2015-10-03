@@ -1,10 +1,9 @@
 (function() {
 
-  var FizzBuzz = require('sea-d44-fizz-buzz-ps');
+  var FizzBuzz = require('sea-d44-fizz-buzz-ps'); // Require the modules
   var Printlist = require('./print-list.js');
-
-  var myFizzy = new FizzBuzz("front", "end");
-  var button = document.getElementById("submitBuzz");
+  var myFizzy = new FizzBuzz("front", "end"); // Instantiate FizzBuzz
+  var button = document.getElementById("submitBuzz"); // Variable with <button> id
 
   button.addEventListener("click", function (e) {
     e.preventDefault();
@@ -13,39 +12,27 @@
     var max = parseInt(document.getElementById("second-value").value);
     var createHead = document.createElement('h2');
     var headText = "Values " + min + " to " + max;
-    // var createUl = document.createElement('ul');
     var fizzBuzzList = document.getElementById("fizz-list");
 
-    myFizzy.input(min, max);
+    myFizzy.input(min, max); // Pass in the min max to the input method
 
-    if (!document.getElementById("check-box").checked) {
+    if (!document.getElementById("check-box").checked) { // If no checked box, then remove children
       while (fizzBuzzList.hasChildNodes()) {
         fizzBuzzList.removeChild(fizzBuzzList.firstChild);
       }
     }
 
-    if (isNaN(min) || isNaN(max)) {
+    if (isNaN(min) || isNaN(max)) { // Alerts to enter values correctly, please
       alert("Please enter a number");
     } else if (min >= max) {
       alert("First value must be less than the second");
     } else {
 
       // Write the head
-      createHead.appendChild(document.createTextNode(headText)); // Create & append the h2
+      createHead.appendChild(document.createTextNode(headText)); // Create & append the H2
       fizzBuzzList.appendChild(createHead);
 
-      var fizzArray = myFizzy.output();
-
-      Printlist(fizzBuzzList, fizzArray);
-
-      // for (var i = 0; i < fizzArray.length; i++) {
-      //   var listItem = document.createElement('li');
-      //   listItem.appendChild(document.createTextNode(fizzArray[i]));
-      //   createUl.appendChild(listItem);
-      // }
-
-      // // I want to just say here is my div, make a ul in there with this array
-      // fizzBuzzList.appendChild(createUl); // Append the ul
+      Printlist(fizzBuzzList, myFizzy.output()); // Create the List
 
     }
   });
