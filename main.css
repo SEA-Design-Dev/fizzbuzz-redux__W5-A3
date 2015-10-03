@@ -1,0 +1,27 @@
+
+body {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+fieldset {
+  width: 50%;
+  margin: 1% auto;
+}
+
+section {
+  padding: 0 10%;
+}
+
+.fizz {
+  color: #6EC5E9;
+}
+
+.buzz {
+  color: #FFC56C;
+}
+
+.fizzbuzz {
+  color: #FF5959;
+}
