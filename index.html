@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>FizzBuzz on Steroids!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <header>
+        <h1>Welcome to the FizzBuzz Calculator!</h1>
+      </header>
+      <section>
+        <h2>Please enter two numbers.  The first number will be the starting range, and the second number will be the end range.</h2>
+          <form id="form_submit" class="form_fizzbuzz">
+              <fieldset>
+                <div>
+                  <label for="textinput">Enter Starting Number:</label>
+                  <input id="number_start" type="text" name="textinput" placeholder="starting number">
+                </div>
+                <div>
+                  <label for="textinput">Enter Ending Number:</label>
+                  <input id="number_end" type="text" name="textinput" placeholder="ending number">
+                </div>
+                <button id="btn_fizzbuzz" type="submit">Calculate</button>
+              </fieldset>
+          </form>
+      </section>
+      <section>
+        <h2>Choose which words you would like to use for fizzbuzz.</h2>
+           <form id="form_words" class="form_name_fizz">
+              <fieldset>
+                <div>
+                  <label for="textinput">Enter First Word:</label>
+                  <input id="word_one" type="text" name="textinput" placeholder="first word">
+                </div>
+                <div>
+                  <label for="textinput">Enter Second Word:</label>
+                  <input id="word_two" type="text" name="textinput" placeholder="second word">
+                </div>
+                <button id="btn_fizz_word" type="submit">Set Words</button>
+              </fieldset>
+          </form>
+      </section>
+      <section>
+        <p class="p_word_choice">Your words are: 1) <span id="display_word_one">Fizz</span> and 2) <span id="display_word_two">Buzz</span></p>
+        <h2>Results!<span id="firstnum"></span><span id="secondnum"></span></h2>
+        <p id="results_fizzbuzz"></p>
+      </section>
+      <!-- <script src="./fizzbuzz.js"></script> -->
+      <script src="./webpacked.js"></script>
+    </body>
+</html>

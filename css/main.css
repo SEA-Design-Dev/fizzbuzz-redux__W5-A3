@@ -1,0 +1,115 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+
+/* -- Page Styles --*/
+body {
+  padding: 5%;
+  width: 90%;
+  background-image:
+    radial-gradient(
+      #BBDDFF,
+      #3399CC
+    );
+  }
+h1 {
+  font-size: 2em;
+  padding-bottom: 1em;
+  text-align: center;
+  font-family: fantasy;
+  font-weight: bold;
+}
+section {
+  display: inline-block;
+  width: 45%;
+}
+p {
+  padding-bottom: 1em;
+  display: inline;
+}
+form {
+  border: 1px solid #006633;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+form div {
+  padding: 1em;
+}
+h2 {
+  font-size: 1.25em;
+  padding: 1em;
+  font-style: italic;
+}
+#results_fizzbuzz {
+  padding-top: 1em;
+}
+ol {
+  list-style: disc;
+  padding-left: 5%;
+}
+li {
+  margin-bottom: 0.5em;
+  margin-left: 2em;
+}
+p span {
+  font-family: fantasy;
+  font-size: 2em;
+  font-style: italic;
+}
+.p_word_choice {
+  padding: 2em;
+}
+button {
+  padding: .5em;
+  margin: 0 0 1em 1em;
+  border-top: 1px solid #006633;
+  background: #00CC66;
+  background: -webkit-linear-gradient(top, #006633, #00CC66);
+  border-radius: 10px;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: .8em;
+  font-family: fantasy;
+  vertical-align: middle;
+  }
+button:hover {
+  border-top-color: #28597a;
+  background: #28597a;
+  background: -webkit-linear-gradient(bottom, #006633, #00CC66);
+  color: #ccc;
+ }
+
