@@ -1,46 +1,23 @@
 "use strict";
 
-var FizzBuzz = (function() {
+(function() {
 
-  // var _stringsArray, _userInputArray, _outputArray;
+  var FizzyBuzzy = require("sea-d44-fizz-buzz-hl");
+  var _userInputArray;
 
-  // function _generateOutput(inputs, strings) {
-  //   var outputArray = [];
-
-  //   for(var i = inputs[0]; i <= inputs[1]; i++) {
-  //     var output = "";
-
-  //     if (i % 3 === 0) {
-  //       output = strings[0] || "Fizz";
-  //     }
-  //     if (i % 5 === 0) {
-  //       output += strings[1] || "Buzz";
-  //     }
-  //     if (!output) {
-  //       output = i;
-  //     }
-  //     outputArray.push(output);
-  //   }
-
-  //   return outputArray;
-  // }
-
-  // function _clearTable(anchor, table) {
-  //   if (table) {
-  //     anchor.removeChild(table);
-  //   }
-  // }
-
-  // var FizzyBuzzy = function(string1, string2) {
-  //   _stringsArray = [string1, string2];
-  // }
+  function _clearTable(anchor, table) {
+    if (table) {
+      anchor.removeChild(table);
+    }
+  }
 
   FizzyBuzzy.prototype.read = function(startNode, endNode) {
     _userInputArray = [parseInt(startNode.value), parseInt(endNode.value)];
-    _outputArray = _generateOutput(_userInputArray, _stringsArray);
+    this.input(_userInputArray[0], _userInputArray[1]);
   }
 
   FizzyBuzzy.prototype.write = function(node) {
+    var output = this.output();
     var anchor = node;
     var table = document.getElementById("results");
     var newTable = document.createElement("table");
@@ -59,16 +36,16 @@ var FizzBuzz = (function() {
          .textContent = _userInputArray[0] + " to " + _userInputArray[1] + ":";
     table.appendChild(newTableBody);
 
-    for(var i = 0; i < _outputArray.length; i++) {
+    for(var i = 0; i < output.length; i++) {
       var newTableRow = document.createElement("tr");
       var newTableData = document.createElement("td");
 
       table.lastChild.appendChild(newTableRow).appendChild(newTableData)
-           .textContent = _outputArray[i];
+           .textContent = output[i];
     }
   }
 
-  return FizzyBuzzy;
+  module.exports = FizzyBuzzy;
 
 })();
 

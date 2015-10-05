@@ -48,9 +48,30 @@
 
 	(function() {
 
-	  var FizzBuzz = __webpack_require__(1);
+	  var FizzyBuzzy = __webpack_require__(1);
 
-	  var fizzBuzz = new FizzBuzz("Bull", "Shit");
+	  var fizzBuzz = new FizzyBuzzy("Bull", "Shit");
+
+	  function handler(e) {
+	    e.preventDefault();
+	    fizzBuzz.read(document.getElementById("start-value"), document.getElementById("end-value"));
+	    fizzBuzz.write(document.getElementById("fizz-buzz"));
+	  }
+
+	  document.getElementById("user-input").addEventListener("submit", handler, false);
+
+	})();
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	(function() {
+
+	  var FizzyBuzzy = __webpack_require__(2);
 	  var _userInputArray;
 
 	  function _clearTable(anchor, table) {
@@ -59,12 +80,12 @@
 	    }
 	  }
 
-	  fizzBuzz.read = function(startNode, endNode) {
+	  FizzyBuzzy.prototype.read = function(startNode, endNode) {
 	    _userInputArray = [parseInt(startNode.value), parseInt(endNode.value)];
 	    this.input(_userInputArray[0], _userInputArray[1]);
 	  }
 
-	  fizzBuzz.write = function(node) {
+	  FizzyBuzzy.prototype.write = function(node) {
 	    var output = this.output();
 	    var anchor = node;
 	    var table = document.getElementById("results");
@@ -93,26 +114,21 @@
 	    }
 	  }
 
-	  function handler(e) {
-	    e.preventDefault();
-	    fizzBuzz.read(document.getElementById("start-value"), document.getElementById("end-value"));
-	    fizzBuzz.write(document.getElementById("fizz-buzz"));
-	  }
-
-	  document.getElementById("user-input").addEventListener("submit", handler, false);
+	  module.exports = FizzyBuzzy;
 
 	})();
 
 
+
 /***/ },
-/* 1 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	(function() {
 
-	  var _generateOutput = __webpack_require__(2);
+	  var _generateOutput = __webpack_require__(3);
 
 	  var _stringsArray = [];
 	  var _outputArray;
@@ -136,7 +152,7 @@
 
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports) {
 
 	"use strict";
