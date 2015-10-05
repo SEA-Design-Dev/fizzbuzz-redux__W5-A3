@@ -1,0 +1,23 @@
+{
+  "name": "fizzbuzz-redux__require-npm",
+  "version": "1.0.0",
+  "description": "## Scenario and Requirements",
+  "main": "app.js",
+  "dependencies": {
+    "sea-d44-fizz-buzz-ch": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisdholt/fizzbuzz-redux__W5-A3.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisdholt/fizzbuzz-redux__W5-A3/issues"
+  },
+  "homepage": "https://github.com/chrisdholt/fizzbuzz-redux__W5-A3#readme"
+}
