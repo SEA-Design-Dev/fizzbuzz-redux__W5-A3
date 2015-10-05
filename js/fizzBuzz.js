@@ -2,7 +2,7 @@ var fizzbuzz = require('sea-d44-fizz-buzz-ch');
 var modifyArray = require('./array.js');
 
 function renderFizzBuzz (name, lowId, highId, divId) {
-  var game, lowNum, highNum, id, heading, hText, print;
+  var game, lowNum, highNum, id, heading, hText;
   game = name;
   lowNum = parseInt(document.getElementById(lowId).value);
   highNum = parseInt(document.getElementById(highId).value);
