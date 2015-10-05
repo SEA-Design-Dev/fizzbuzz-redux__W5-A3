@@ -46,8 +46,8 @@
 
 	(function() {
 
-	  var FizzBuzz = __webpack_require__(1); // Require the modules
-	  var Printlist = __webpack_require__(2);
+	  var FizzBuzz = __webpack_require__(1); // Require the FizzBuzz module
+	  var Printlist = __webpack_require__(2); // Require the Printlist module
 	  var myFizzy = new FizzBuzz("front", "end"); // Instantiate FizzBuzz
 	  var button = document.getElementById("submitBuzz"); // Variable with <button> id
 
@@ -68,7 +68,7 @@
 	      }
 	    }
 
-	    if (isNaN(min) || isNaN(max)) { // Alerts to enter values correctly, please
+	    if (isNaN(min) || isNaN(max)) { // Alerts to enter values correctly
 	      alert("Please enter a number");
 	    } else if (min >= max) {
 	      alert("First value must be less than the second");
@@ -77,8 +77,6 @@
 	      // Write the head
 	      createHead.appendChild(document.createTextNode(headText)); // Create & append the H2
 	      fizzBuzzList.appendChild(createHead);
-
-	      // var fizzArray = myFizzy.output();
 
 	      Printlist(fizzBuzzList, myFizzy.output()); // Create the List
 
@@ -137,14 +135,14 @@
 	    var createUl = document.createElement('ul'); // Create a UL
 
 	    for (var i = 0; i < array.length; i++) {
-	      var createLi = document.createElement('li');  // Create an LI
-	      createLi.appendChild(document.createTextNode(array[i])); // Create Text Node with array value; append to LI
+	      var createLi = document.createElement('li');  // Create an LI for each value in the array
+	      createLi.appendChild(document.createTextNode(array[i])); // Create Text Node with array the value; append to LI
 	      createUl.appendChild(createLi); // Append LI to UL
 	    }
 	    elementID.appendChild(createUl); // Append UL to elementID
 	  };
 
-	  return _printList; // Return the function
+	  return _printList;
 
 	})();
 

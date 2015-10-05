@@ -1,7 +1,7 @@
 (function() {
 
-  var FizzBuzz = require('sea-d44-fizz-buzz-ps'); // Require the modules
-  var Printlist = require('./print-list.js');
+  var FizzBuzz = require('sea-d44-fizz-buzz-ps'); // Require the FizzBuzz module
+  var Printlist = require('./print-list.js'); // Require the Printlist module
   var myFizzy = new FizzBuzz("front", "end"); // Instantiate FizzBuzz
   var button = document.getElementById("submitBuzz"); // Variable with <button> id
 
@@ -22,18 +22,16 @@
       }
     }
 
-    if (isNaN(min) || isNaN(max)) { // Alerts to enter values correctly, please
+    if (isNaN(min) || isNaN(max)) { // Alerts to enter values correctly
       alert("Please enter a number");
     } else if (min >= max) {
       alert("First value must be less than the second");
     } else {
-
       // Write the head
       createHead.appendChild(document.createTextNode(headText)); // Create & append the H2
       fizzBuzzList.appendChild(createHead);
-
       Printlist(fizzBuzzList, myFizzy.output()); // Create the List
-
     }
+
   });
 })();
