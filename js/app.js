@@ -45,18 +45,19 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var fizzbuzz = __webpack_require__(1);
+	var modifyArray = __webpack_require__(2);
 
-	function runGame (name, lowId, highId, divId) {
-	  var game, lowNum, highNum, id, print;
+	function renderFizzBuzz (name, lowId, highId, divId) {
+	  var game, lowNum, highNum, id, heading, hText, print;
 	  game = name;
 	  lowNum = parseInt(document.getElementById(lowId).value);
 	  highNum = parseInt(document.getElementById(highId).value);
 	  id = divId;
 
-	  writeNums = document.getElementById(id);
+	  var writeNums = document.getElementById(id);
 	  writeNums.innerHTML = "";
-	  var heading = document.createElement("h2");
-	  var hText = "<em>You chose the numbers " + lowNum + " and " + highNum + ".</em>";
+	  heading = document.createElement("h2");
+	  hText = "<em>You chose the numbers " + lowNum + " and " + highNum + ".</em>";
 	  heading.innerHTML = hText;
 	  writeNums.appendChild(heading);
 
@@ -67,26 +68,8 @@
 	  game.input(lowNum, highNum);
 	  fizzBuzzResults = game.output();
 
-	  var modifyArray = function() {
-	    var print = '';
-
-	    for (i = 0; i < fizzBuzzResults.length; i++) {
-	      if (fizzBuzzResults[i] === game.fizz) {
-	        print += "<span class='fizz'>" + fizzBuzzResults[i] + "</span>" + ' ';
-	      }
-	      else if (fizzBuzzResults[i] === game.buzz) {
-	        print += "<span class='buzz'>" + fizzBuzzResults[i] +"</span>" + ' ';
-	      }
-	      else if (fizzBuzzResults[i] === game.fizzbuzz) {
-	        print += "<span class='fizzbuzz'>" + fizzBuzzResults[i] +"</span>" + ' ';
-	      }
-	      else print += fizzBuzzResults[i] + ' ';
-	    }
-	    return print;
-	  };
-
-	  writeFB = document.createElement("p");
-	  writeFB.innerHTML = modifyArray();
+	  var writeFB = document.createElement("p");
+	  writeFB.innerHTML = modifyArray(fizzBuzzResults, game.fizz, game.buzz, game.fizzbuzz);
 	  writeNums.appendChild(writeFB);
 	}
 
@@ -95,7 +78,7 @@
 	var formId = document.getElementById("numbers");
 	formId.addEventListener("submit", function(e) {
 	  e.preventDefault();
-	  runGame(myFizzBuzz, "low", "high", "displayNums");
+	  renderFizzBuzz(myFizzBuzz, "low", "high", "displayNums");
 	});
 
 
@@ -105,9 +88,9 @@
 
 	var fizzbuzz = (function() {
 	  var _fizzBuzz = function(fizz, buzz) {
-	    this.fizzbuzz = fizz + buzz || "fizzbuzz";
-	    this.fizz = fizz || "fizz";
-	    this.buzz = buzz || "buzz";
+	    this.fizzbuzz = fizz + buzz || "Fizzbuzz";
+	    this.fizz = fizz || "Fizz";
+	    this.buzz = buzz || "Buzz";
 	    this.nums = [];
 	  };
 
@@ -150,6 +133,36 @@
 	}());
 
 	module.exports = fizzbuzz;
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	function modifyArray(resultsArray, string1, string2, string3) {
+	  this.resultsArray = resultsArray;
+	  this.string1 = string1;
+	  this.string2 = string2;
+	  this.string3 = string3;
+
+	  var print = '';
+
+	  for (i = 0; i < this.resultsArray.length; i++) {
+	    if (this.resultsArray[i] === this.string1) {
+	      print += "<span class='" + "s-" + this.string1 + "'>" + this.resultsArray[i] + "</span>" + ' ';
+	    }
+	    else if (this.resultsArray[i] === this.string2) {
+	      print += "<span class='" + "s-" + this.string2 + "'>" + this.resultsArray[i] +"</span>" + ' ';
+	    }
+	    else if (this.resultsArray[i] === this.string3) {
+	      print += "<span class='" + "s-" + this.string3 + "'>" + this.resultsArray[i] +"</span>" + ' ';
+	    }
+	    else print += this.resultsArray[i] + ' ';
+	  }
+	  return print;
+	}
+
+	module.exports = modifyArray;
 
 
 /***/ }

@@ -14,14 +14,26 @@ section {
   padding: 0 10%;
 }
 
-.fizz {
+.s-fizz {
   color: #6EC5E9;
 }
 
-.buzz {
+.s-buzz {
   color: #FFC56C;
 }
 
-.fizzbuzz {
+.s-fizzbuzz {
+  color: #FF5959;
+}
+
+.s-Shmizz {
+  color: #6EC5E9;
+}
+
+.s-Shmuzz {
+  color: #FFC56C;
+}
+
+.s-ShmizzShmuzz {
   color: #FF5959;
 }
