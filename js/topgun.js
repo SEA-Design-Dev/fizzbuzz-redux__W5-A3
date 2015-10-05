@@ -56,9 +56,22 @@ module.exports = (function() {
 
 var FizzBuzz = require('./fizzbuzz.js');
 
-var buzzer = new FizzBuzz();
+var form = document.getElementById('form');
+form.addEventListener('submit', function(e) {
 
-buzzer.input(1, 23);
-console.log(buzzer.output());
+  e.preventDefault();
+
+  var low = Number(form.elements.lowNumber.value);
+  var high = Number(form.elements.highNumber.value);
+
+  var wordOne = form.elements.fizzOption.value;
+  var wordTwo = form.elements.buzzOption.value;
+
+  var buzzer = new FizzBuzz(wordOne, wordTwo);
+
+  buzzer.input(low, high);
+  console.log(buzzer.output());
+
+});
 
 },{"./fizzbuzz.js":1}]},{},[2]);
