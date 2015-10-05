@@ -1,0 +1,23 @@
+{
+  "name": "fizzbuzz-redux__W5-A3",
+  "version": "1.0.0",
+  "description": "FizzBuzz redux requiring node module",
+  "main": "index.js",
+  "dependencies": {
+    "sea-d44-fizz-buzz-hl": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hollislau/fizzbuzz-redux__W5-A3.git"
+  },
+  "author": "Hollis Lau <hollislau@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hollislau/fizzbuzz-redux__W5-A3/issues"
+  },
+  "homepage": "https://github.com/hollislau/fizzbuzz-redux__W5-A3"
+}
