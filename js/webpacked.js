@@ -46,6 +46,8 @@
 
 	(function() {
 
+	  "use strict";
+
 	  var FizzBuzz = __webpack_require__(1); // Require the FizzBuzz module
 	  var Printlist = __webpack_require__(2); // Require the Printlist module
 	  var myFizzy = new FizzBuzz("front", "end"); // Instantiate FizzBuzz
@@ -73,14 +75,12 @@
 	    } else if (min >= max) {
 	      alert("First value must be less than the second");
 	    } else {
-
 	      // Write the head
 	      createHead.appendChild(document.createTextNode(headText)); // Create & append the H2
 	      fizzBuzzList.appendChild(createHead);
-
-	      Printlist(fizzBuzzList, myFizzy.output()); // Create the List
-
+	      new Printlist(fizzBuzzList, myFizzy.output()); // Create the List
 	    }
+
 	  });
 	})();
 
@@ -129,6 +129,8 @@
 /***/ function(module, exports) {
 
 	var Printlist = (function () {
+
+	  "use strict";
 
 	  var _printList = function(elementID, array) {
 

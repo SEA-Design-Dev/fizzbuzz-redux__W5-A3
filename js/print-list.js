@@ -1,5 +1,7 @@
 var Printlist = (function () {
 
+  "use strict";
+
   var _printList = function(elementID, array) {
 
     var createUl = document.createElement('ul'); // Create a UL

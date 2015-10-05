@@ -1,5 +1,7 @@
 (function() {
 
+  "use strict";
+
   var FizzBuzz = require('sea-d44-fizz-buzz-ps'); // Require the FizzBuzz module
   var Printlist = require('./print-list.js'); // Require the Printlist module
   var myFizzy = new FizzBuzz("front", "end"); // Instantiate FizzBuzz
@@ -30,7 +32,7 @@
       // Write the head
       createHead.appendChild(document.createTextNode(headText)); // Create & append the H2
       fizzBuzzList.appendChild(createHead);
-      Printlist(fizzBuzzList, myFizzy.output()); // Create the List
+      new Printlist(fizzBuzzList, myFizzy.output()); // Create the List
     }
 
   });
