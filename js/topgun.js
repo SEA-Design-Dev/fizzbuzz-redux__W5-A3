@@ -61,6 +61,9 @@ form.addEventListener('submit', function(e) {
 
   e.preventDefault();
 
+  var el = document.getElementById('FizzBuzz');
+  el.removeChild(el.firstChild);
+
   var low = Number(form.elements.lowNumber.value);
   var high = Number(form.elements.highNumber.value);
 
@@ -70,7 +73,17 @@ form.addEventListener('submit', function(e) {
   var buzzer = new FizzBuzz(wordOne, wordTwo);
 
   buzzer.input(low, high);
-  console.log(buzzer.output());
+
+  var fizzBuzzData = document.createElement('ul');
+
+    for (var j = 0; j < buzzer.output().length; j++) {
+      var temp = document.createElement('li');
+      var tempText = document.createTextNode(buzzer.output()[j]);
+      temp.appendChild(tempText);
+      fizzBuzzData.appendChild(temp);
+    }
+
+    el.appendChild(fizzBuzzData);
 
 });
 
