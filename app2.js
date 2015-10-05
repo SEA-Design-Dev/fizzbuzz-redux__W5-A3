@@ -11,7 +11,7 @@ var FizzBuzz = (function () {
       this.result =[];
       for ( aVal ; aVal <= zVal; aVal ++) {
         if (aVal % 5 === 0 && aVal % 3 === 0) {
-          this.result.push(this.newString1+this.newString2)
+          this.result.push(this.newString1+this.newString2);
         } else if ( aVal % 3 === 0) {
           this.result.push(this.newString1);
         } else if (aVal % 5 === 0) {
