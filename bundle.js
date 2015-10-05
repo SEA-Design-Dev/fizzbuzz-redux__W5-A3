@@ -1,14 +1,23 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var nodeBuzz = require('sea-d44-fizz-buzz-zg');
+var NodeBuzz = require('sea-d44-fizz-buzz-zg');
 
-document.getElementById("button-a").addEventListener("click", function (e) {
-var myfizz = new FizzBuzz('bleep', 'blorp');
+
+document.getElementById("button-b").addEventListener("submit", function (e) {
+  var myfizz = new NodeBuzz('bleep', 'blorp');
+
+  aVal  = parseInt(document.getElementById("min").value);
+  zVal  = parseInt(document.getElementById("max").value);
+
+  myfizz.input(aVal, zVal);
+
+  document.getElementById("write").innerHTML="";
+  var newEl = document.createElement("p");
+  var newtext = document.createTextNode(myfizz.output(this.result));
+  newEl.appendChild(newtext);
+  document.getElementById("write").appendChild(newEl);
   e.preventDefault();
-  aVal  = document.getElementById("min").value;
-  zVal  = document.getElementById("max").value;
-  myfizz.read(aVal, zVal);
-  myfizz.write();
 });
+
 
 
 
@@ -46,7 +55,7 @@ var FizzBuzz = (function () {
 
 }());
 
-module.exports = FizzBuzz;
+module.exports = FizzBuzz
 
 
 
