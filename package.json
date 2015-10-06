@@ -4,9 +4,12 @@
   "description": "FizzBuzz redux requiring node module",
   "main": "index.js",
   "dependencies": {
-    "sea-d44-fizz-buzz-hl": "^1.0.0"
+    "sea-d44-fizz-buzz-hl": "^1.0.0",
+    "webpack-stream": "^2.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

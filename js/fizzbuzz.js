@@ -14,7 +14,7 @@
   FizzyBuzzy.prototype.read = function(startNode, endNode) {
     _userInputArray = [parseInt(startNode.value), parseInt(endNode.value)];
     this.input(_userInputArray[0], _userInputArray[1]);
-  }
+  };
 
   FizzyBuzzy.prototype.write = function(node) {
     var output = this.output();
@@ -43,7 +43,7 @@
       table.lastChild.appendChild(newTableRow).appendChild(newTableData)
            .textContent = output[i];
     }
-  }
+  };
 
   module.exports = FizzyBuzzy;
 

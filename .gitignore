@@ -1,2 +1,5 @@
 # Node Modules Directory
 node_modules
+
+# Compiled Files
+build
