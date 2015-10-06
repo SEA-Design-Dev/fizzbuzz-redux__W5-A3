@@ -1,0 +1,39 @@
+
+body {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+fieldset {
+  width: 50%;
+  margin: 1% auto;
+}
+
+section {
+  padding: 0 10%;
+}
+
+.s-fizz {
+  color: #6EC5E9;
+}
+
+.s-buzz {
+  color: #FFC56C;
+}
+
+.s-fizzbuzz {
+  color: #FF5959;
+}
+
+.s-Shmizz {
+  color: #6EC5E9;
+}
+
+.s-Shmuzz {
+  color: #FFC56C;
+}
+
+.s-ShmizzShmuzz {
+  color: #FF5959;
+}
